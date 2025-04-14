@@ -1,106 +1,135 @@
-/* style.css */
+/* =============== Reset & Base =============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-}
-
-.acer-q4-landing {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18px;
-  max-width: 1200px;
-  margin: 0 auto;
   line-height: 1.5;
+  color: #000;
+  background-color: #fff;
 }
 
-.acer-q4-landing .top-banner,
-.acer-q4-landing .container {
-  margin: 0 auto;
+/* =============== Layout Containers =============== */
+.container {
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-.acer-q4-landing ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
+.section {
+  margin-bottom: 60px;
 }
 
-.acer-q4-landing .section.products p.heading {
-  margin-top: 30px;
-}
-
-.acer-q4-landing .section.products p.highlight small {
-  color: #74bb39;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.acer-q4-landing .section.products a.action {
-  color: #74bb39;
-  font-size: 18px;
-  font-weight: normal;
-  text-decoration: underline;
-}
-
-.acer-q4-landing .grid-row {
-  align-items: center;
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas: 'col1 col-2';
-  grid-template-columns: 1fr 1fr;
-  padding: 25px;
-}
-
-.acer-q4-landing .grid-row.grid-text {
-  align-items: flex-start;
-}
-
-.acer-q4-landing .grid-row.cols-4 {
-  align-items: flex-start;
-  grid-template-areas: 'col1 col-2 col-3 col-4';
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.acer-q4-landing .grid-row .block p {
-  font-size: 18px;
-  margin: 0;
-  line-height: 30px;
-}
-
-.acer-q4-landing a {
-  text-decoration: none;
-}
-
-.acer-q4-landing img {
-  max-width: 100%;
+.top-banner img {
+  width: 100%;
   display: block;
 }
 
-.acer-q4-landing .heading {
-  color: #000;
-  font-size: 25px;
-  font-weight: bold;
-  margin: 0 0 20px;
+/* =============== Grid Layouts =============== */
+.grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 25px 0;
+  align-items: center;
 }
 
-/* Responsive Styles */
-@media (max-width: 600px) {
-  .acer-q4-landing .grid-row {
-      display: block;
-      padding: 15px;
+.grid-row--text-only {
+  align-items: flex-start;
+}
+
+.grid-row--four-cols {
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+}
+
+/* =============== Blocks =============== */
+.image-block img {
+  width: 100%;
+  display: block;
+}
+
+.text-block .heading {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.text-block p {
+  margin-bottom: 20px;
+}
+
+/* =============== Product Section =============== */
+.product-section {
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.product-section .section-heading {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 30px 0;
+}
+
+.product-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product-card {
+  background: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product-card small {
+  color: #74bb39;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+}
+
+.product-card .product-name {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card .action-link {
+  font-size: 16px;
+  color: #74bb39;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+/* =============== Responsive Design =============== */
+@media (max-width: 991px) {
+  .grid-row,
+  .grid-row--four-cols {
+    grid-template-columns: 1fr;
   }
-  .acer-q4-landing .grid-row.cols-4 .item {
-      margin: 0 auto 20px;
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 767px),
-     (max-width: 991px) {
-  .acer-q4-landing .grid-row.cols-4 {
-      grid-template-areas: 'col1 col-2';
-      grid-template-columns: 1fr 1fr;
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
   }
-  .acer-q4-landing .grid-row.cols-4 .item {
-      margin: 0 auto 20px;
-  }
-  .acer-q4-landing .section.products p.heading {
-      margin: 15px;
+
+  .grid-row {
+    padding: 15px 0;
   }
 }
