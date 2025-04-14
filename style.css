@@ -1,0 +1,106 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+}
+
+.acer-q4-landing {
+  font-size: 18px;
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.acer-q4-landing .top-banner,
+.acer-q4-landing .container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.acer-q4-landing ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.acer-q4-landing .section.products p.heading {
+  margin-top: 30px;
+}
+
+.acer-q4-landing .section.products p.highlight small {
+  color: #74bb39;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.acer-q4-landing .section.products a.action {
+  color: #74bb39;
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.acer-q4-landing .grid-row {
+  align-items: center;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'col1 col-2';
+  grid-template-columns: 1fr 1fr;
+  padding: 25px;
+}
+
+.acer-q4-landing .grid-row.grid-text {
+  align-items: flex-start;
+}
+
+.acer-q4-landing .grid-row.cols-4 {
+  align-items: flex-start;
+  grid-template-areas: 'col1 col-2 col-3 col-4';
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.acer-q4-landing .grid-row .block p {
+  font-size: 18px;
+  margin: 0;
+  line-height: 30px;
+}
+
+.acer-q4-landing a {
+  text-decoration: none;
+}
+
+.acer-q4-landing img {
+  max-width: 100%;
+  display: block;
+}
+
+.acer-q4-landing .heading {
+  color: #000;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .acer-q4-landing .grid-row {
+      display: block;
+      padding: 15px;
+  }
+  .acer-q4-landing .grid-row.cols-4 .item {
+      margin: 0 auto 20px;
+  }
+}
+@media (max-width: 767px),
+     (max-width: 991px) {
+  .acer-q4-landing .grid-row.cols-4 {
+      grid-template-areas: 'col1 col-2';
+      grid-template-columns: 1fr 1fr;
+  }
+  .acer-q4-landing .grid-row.cols-4 .item {
+      margin: 0 auto 20px;
+  }
+  .acer-q4-landing .section.products p.heading {
+      margin: 15px;
+  }
+}
